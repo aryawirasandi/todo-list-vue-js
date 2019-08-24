@@ -1,13 +1,19 @@
 <template>
-  <HelloWorld />
+    <div>
+      
+    </div>
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld';
-
 export default {
-  components: {
-    HelloWorld,
-  },
+    name : "home",
+    computed:{
+      todos(){
+        return this.$store.getters.listTodos
+      }
+    },
+    created(){
+      this.$store.dispatch('listTodos')
+    }
 };
 </script>
